@@ -7,7 +7,7 @@ export function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 sm:flex-row">
         <Link href="/" className="flex items-center gap-2">
           <Leaf className="size-4 text-moss-green" />
-          <span className="font-serif text-base text-foreground">
+          <span className="font-serif italic text-base text-foreground">
             crystalline_9
           </span>
         </Link>
