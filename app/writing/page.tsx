@@ -1,55 +1,56 @@
-import type { Metadata } from 'next'
-import { Footer } from '@/components/footer'
+import type { Metadata } from "next";
+import { Footer } from "@/components/footer";
 
 export const metadata: Metadata = {
-  title: 'Writing — Verdant',
-  description: 'A logbook of essays and fragments on meaning, attention, and how to live deliberately.',
-}
+  title: "Writing — crystalline_9",
+  description:
+    "A logbook of essays and fragments on meaning, attention, and how to live deliberately.",
+};
 
 const entries = [
   {
-    title: 'The seams between systems',
-    date: 'Apr 2026',
+    title: "The seams between systems",
+    date: "Apr 2026",
     excerpt:
-      'Most things don\u2019t break inside a system. They break at the seams where one system hands off to another — and that\u2019s where I\u2019ve learned to look first.',
-    read: '6 min',
+      "Most things don\u2019t break inside a system. They break at the seams where one system hands off to another — and that\u2019s where I\u2019ve learned to look first.",
+    read: "6 min",
   },
   {
-    title: 'On editing as remembering',
-    date: 'Mar 2026',
+    title: "On editing as remembering",
+    date: "Mar 2026",
     excerpt:
-      'The best cuts I\u2019ve ever made happened when I stopped trying to impress an audience and started trying to remember a feeling. Restraint is the whole craft.',
-    read: '4 min',
+      "The best cuts I\u2019ve ever made happened when I stopped trying to impress an audience and started trying to remember a feeling. Restraint is the whole craft.",
+    read: "4 min",
   },
   {
-    title: 'A forest is not a list',
-    date: 'Feb 2026',
+    title: "A forest is not a list",
+    date: "Feb 2026",
     excerpt:
-      'Why I stopped organizing my work into tidy categories and started treating it like terrain — something you wander, not something you sort.',
-    read: '5 min',
+      "Why I stopped organizing my work into tidy categories and started treating it like terrain — something you wander, not something you sort.",
+    read: "5 min",
   },
   {
-    title: 'Clarity is a kindness',
-    date: 'Jan 2026',
+    title: "Clarity is a kindness",
+    date: "Jan 2026",
     excerpt:
-      'If a reader has to work, it should be on the idea, never the prose. A note to myself about the ethics of being understood.',
-    read: '3 min',
+      "If a reader has to work, it should be on the idea, never the prose. A note to myself about the ethics of being understood.",
+    read: "3 min",
   },
   {
-    title: 'Prototypes that want to be wrong',
-    date: 'Dec 2025',
+    title: "Prototypes that want to be wrong",
+    date: "Dec 2025",
     excerpt:
-      'The fastest way to learn the real shape of a problem is to build something cheap enough to be wrong quickly. On designing for disproof.',
-    read: '7 min',
+      "The fastest way to learn the real shape of a problem is to build something cheap enough to be wrong quickly. On designing for disproof.",
+    read: "7 min",
   },
   {
-    title: 'The archive is composting',
-    date: 'Nov 2025',
+    title: "The archive is composting",
+    date: "Nov 2025",
     excerpt:
-      'Not everything needs to ship. Some of my best work quietly grew out of half-finished experiments I almost deleted.',
-    read: '4 min',
+      "Not everything needs to ship. Some of my best work quietly grew out of half-finished experiments I almost deleted.",
+    read: "4 min",
   },
-]
+];
 
 export default function WritingPage() {
   return (
@@ -99,5 +100,5 @@ export default function WritingPage() {
         <Footer />
       </div>
     </main>
-  )
+  );
 }

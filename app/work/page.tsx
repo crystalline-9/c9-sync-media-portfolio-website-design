@@ -1,11 +1,12 @@
-import type { Metadata } from 'next'
-import { WorldNodes } from '@/components/world-nodes'
-import { Footer } from '@/components/footer'
+import type { Metadata } from "next";
+import { WorldNodes } from "@/components/world-nodes";
+import { Footer } from "@/components/footer";
 
 export const metadata: Metadata = {
-  title: 'Work — Verdant',
-  description: 'Explore five worlds of creative work: media, systems, writing, design, and experiments.',
-}
+  title: "Work — crystalline_9",
+  description:
+    "Explore five worlds of creative work: media, systems, writing, design, and experiments.",
+};
 
 export default function WorkPage() {
   return (
@@ -25,5 +26,5 @@ export default function WorkPage() {
       <WorldNodes />
       <Footer />
     </main>
-  )
+  );
 }

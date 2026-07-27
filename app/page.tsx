@@ -1,6 +1,6 @@
-import { Hero } from '@/components/hero'
-import { WorldNodes } from '@/components/world-nodes'
-import { Footer } from '@/components/footer'
+import { Hero } from "@/components/hero";
+import { WorldNodes } from "@/components/world-nodes";
+import { Footer } from "@/components/footer";
 
 export default function HomePage() {
   return (
@@ -9,5 +9,5 @@ export default function HomePage() {
       <WorldNodes />
       <Footer />
     </main>
-  )
+  );
 }

@@ -1,18 +1,19 @@
-import type { Metadata } from 'next'
-import { Mail, MapPin, Compass } from 'lucide-react'
-import { ContactForm } from '@/components/contact-form'
-import { Footer } from '@/components/footer'
+import type { Metadata } from "next";
+import { Mail, MapPin, Compass } from "lucide-react";
+import { ContactForm } from "@/components/contact-form";
+import { Footer } from "@/components/footer";
 
 export const metadata: Metadata = {
-  title: 'Contact — Verdant',
-  description: 'Reach out to collaborate on media, systems, writing, design, or community work.',
-}
+  title: "Contact — crystalline_9",
+  description:
+    "Reach out to collaborate on media, systems, writing, design, or community work.",
+};
 
 const details = [
-  { icon: Mail, label: 'Email', value: 'hello@verdant.studio' },
-  { icon: MapPin, label: 'Based', value: 'Wherever the signal is calm' },
-  { icon: Compass, label: 'Open to', value: 'Collaboration & commissions' },
-]
+  { icon: Mail, label: "Email", value: "hello@verdant.studio" },
+  { icon: MapPin, label: "Based", value: "Wherever the signal is calm" },
+  { icon: Compass, label: "Open to", value: "Collaboration & commissions" },
+];
 
 export default function ContactPage() {
   return (
@@ -59,5 +60,5 @@ export default function ContactPage() {
         <Footer />
       </div>
     </main>
-  )
+  );
 }
