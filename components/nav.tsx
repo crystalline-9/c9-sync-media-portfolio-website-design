@@ -1,27 +1,27 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import { useState } from 'react'
-import { Menu, X, Leaf } from 'lucide-react'
-import { cn } from '@/lib/utils'
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+import { Menu, X, Leaf } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const links = [
-  { href: '/work', label: 'Work' },
-  { href: '/about', label: 'About' },
-  { href: '/writing', label: 'Writing' },
-  { href: '/archive', label: 'Archive' },
-  { href: '/contact', label: 'Contact' },
-]
+  { href: "/work", label: "Work" },
+  { href: "/about", label: "About" },
+  { href: "/writing", label: "Writing" },
+  { href: "/archive", label: "Archive" },
+  { href: "/contact", label: "Contact" },
+];
 
 export function Nav() {
-  const pathname = usePathname()
-  const [open, setOpen] = useState(false)
+  const pathname = usePathname();
+  const [open, setOpen] = useState(false);
 
   const isActive = (href: string) =>
-    href === '/work'
-      ? pathname === '/work' || pathname.startsWith('/work/')
-      : pathname === href
+    href === "/work"
+      ? pathname === "/work" || pathname.startsWith("/work/")
+      : pathname === href;
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-4">
@@ -35,7 +35,7 @@ export function Nav() {
             <Leaf className="size-4 text-moss-green transition-colors group-hover:text-cyan-mana" />
           </span>
           <span className="font-serif text-lg font-medium tracking-wide text-foreground">
-            Verdant
+            crystalline_9
           </span>
         </Link>
 
@@ -46,10 +46,10 @@ export function Nav() {
               <Link
                 href={link.href}
                 className={cn(
-                  'relative rounded-lg px-3.5 py-2 text-sm font-medium tracking-wide transition-all duration-300',
+                  "relative rounded-lg px-3.5 py-2 text-sm font-medium tracking-wide transition-all duration-300",
                   isActive(link.href)
-                    ? 'text-foreground'
-                    : 'text-muted-foreground hover:text-foreground',
+                    ? "text-foreground"
+                    : "text-muted-foreground hover:text-foreground",
                 )}
               >
                 {isActive(link.href) && (
@@ -66,7 +66,7 @@ export function Nav() {
           type="button"
           onClick={() => setOpen((v) => !v)}
           className="flex size-9 items-center justify-center rounded-lg border border-lavender-glow/20 text-foreground md:hidden"
-          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
         >
           {open ? <X className="size-5" /> : <Menu className="size-5" />}
@@ -83,10 +83,10 @@ export function Nav() {
                   href={link.href}
                   onClick={() => setOpen(false)}
                   className={cn(
-                    'flex items-center justify-between rounded-xl px-4 py-3 text-base font-medium transition-colors',
+                    "flex items-center justify-between rounded-xl px-4 py-3 text-base font-medium transition-colors",
                     isActive(link.href)
-                      ? 'bg-cyan-mana/5 text-foreground'
-                      : 'text-muted-foreground hover:bg-midnight-pine/50 hover:text-foreground',
+                      ? "bg-cyan-mana/5 text-foreground"
+                      : "text-muted-foreground hover:bg-midnight-pine/50 hover:text-foreground",
                   )}
                 >
                   {link.label}
@@ -98,5 +98,5 @@ export function Nav() {
         </div>
       )}
     </header>
-  )
+  );
 }
