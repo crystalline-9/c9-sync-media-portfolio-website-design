@@ -34,7 +34,7 @@ export function Nav() {
           <span className="flex size-8 items-center justify-center rounded-lg border border-moss-green/40 bg-midnight-pine/60">
             <Leaf className="size-4 text-moss-green transition-colors group-hover:text-cyan-mana" />
           </span>
-          <span className="font-serif text-lg font-medium tracking-wide text-foreground">
+          <span className="font-serif italic text-lg font-medium tracking-wide text-foreground">
             crystalline_9
           </span>
         </Link>
