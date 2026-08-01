@@ -1,48 +1,53 @@
-import type { Metadata } from 'next'
-import Image from 'next/image'
-import Link from 'next/link'
-import { notFound } from 'next/navigation'
-import { ArrowLeft } from 'lucide-react'
-import { worlds, getWorld, accentClasses } from '@/lib/worlds'
-import { Footer } from '@/components/footer'
-import { cn } from '@/lib/utils'
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { ArrowLeft } from "lucide-react";
+import { worlds, getWorld, accentClasses } from "@/lib/worlds";
+import { Footer } from "@/components/footer";
+import { cn } from "@/lib/utils";
+import { projects } from "@/lib/projects";
 
 export function generateStaticParams() {
-  return worlds.map((w) => ({ slug: w.slug }))
+  return worlds.map((w) => ({ slug: w.slug }));
 }
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string }>
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const { slug } = await params
-  const world = getWorld(slug)
-  if (!world) return { title: 'Not found — Verdant' }
+  const { slug } = await params;
+  const world = getWorld(slug);
+  if (!world) return { title: "Not found — Verdant" };
   return {
     title: `${world.name} — Verdant`,
     description: world.description,
-  }
+  };
 }
 
 const sections = [
-  { key: 'context', label: 'Context / Intent' },
-  { key: 'process', label: 'Process' },
-  { key: 'outcome', label: 'Outcome' },
-  { key: 'notes', label: 'Notes / Reflections' },
-] as const
+  { key: "context", label: "Context / Intent" },
+  { key: "process", label: "Process" },
+  { key: "outcome", label: "Outcome" },
+  { key: "notes", label: "Notes / Reflections" },
+] as const;
 
 export default async function ProjectPage({
   params,
 }: {
-  params: Promise<{ slug: string }>
+  params: Promise<{ slug: string }>;
 }) {
-  const { slug } = await params
-  const world = getWorld(slug)
-  if (!world) notFound()
+  const { slug } = await params;
+  const world = getWorld(slug);
+  if (!world) notFound();
 
-  const accent = accentClasses[world.accent]
-  const related = worlds.filter((w) => w.slug !== world.slug)
+  const accent = accentClasses[world.accent];
+  const related = worlds.filter((w) => w.slug !== world.slug);
+
+  const categoryProjects = projects.filter(
+    (project) => project.category === world.slug,
+  );
 
   return (
     <main className="pt-24">
@@ -67,12 +72,14 @@ export default async function ProjectPage({
               World Map
             </Link>
             <div className="flex items-baseline gap-3">
-              <span className={cn('font-serif text-3xl font-semibold', accent.text)}>
+              <span
+                className={cn("font-serif text-3xl font-semibold", accent.text)}
+              >
                 {world.index}
               </span>
               <span
                 className={cn(
-                  'text-[11px] font-medium uppercase tracking-[0.25em]',
+                  "text-[11px] font-medium uppercase tracking-[0.25em]",
                   accent.text,
                 )}
               >
@@ -114,7 +121,7 @@ export default async function ProjectPage({
               className="glass rounded-2xl border border-lavender-glow/12 p-6 sm:p-8"
             >
               <div className="mb-3 flex items-center gap-3">
-                <span className={cn('size-2 rounded-full', accent.dot)} />
+                <span className={cn("size-2 rounded-full", accent.dot)} />
                 <h2 className="font-serif text-xl font-medium text-foreground">
                   {s.label}
                 </h2>
@@ -133,7 +140,7 @@ export default async function ProjectPage({
           </h2>
           <nav className="flex flex-col gap-2">
             {related.map((r) => {
-              const rAccent = accentClasses[r.accent]
+              const rAccent = accentClasses[r.accent];
               return (
                 <Link
                   key={r.slug}
@@ -142,7 +149,7 @@ export default async function ProjectPage({
                 >
                   <span
                     className={cn(
-                      'flex size-9 shrink-0 items-center justify-center rounded-lg border font-serif text-sm',
+                      "flex size-9 shrink-0 items-center justify-center rounded-lg border font-serif text-sm",
                       rAccent.border,
                       rAccent.text,
                     )}
@@ -159,7 +166,7 @@ export default async function ProjectPage({
                   </span>
                   <span
                     className={cn(
-                      'ml-auto text-sm transition-transform duration-300 group-hover:translate-x-0.5',
+                      "ml-auto text-sm transition-transform duration-300 group-hover:translate-x-0.5",
                       rAccent.text,
                     )}
                     aria-hidden="true"
@@ -167,7 +174,7 @@ export default async function ProjectPage({
                     →
                   </span>
                 </Link>
-              )
+              );
             })}
           </nav>
         </aside>
@@ -175,5 +182,5 @@ export default async function ProjectPage({
 
       <Footer />
     </main>
-  )
+  );
 }
