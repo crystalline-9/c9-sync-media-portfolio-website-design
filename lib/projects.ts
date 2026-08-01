@@ -1,22 +1,296 @@
 export type Project = {
   slug: string;
   category: string;
+  code: string;
   title: string;
   description: string;
-  status: string;
-  published: string;
+  status: "live" | "paused" | "wip";
   tags: string[];
 };
 
 export const projects: Project[] = [
   {
+    slug: "crystalline-9",
+    category: "media",
+    code: "MED-001",
+    title: "crystalline_9",
+    description: "Your description goes here.",
+    status: "live",
+    tags: ["Platform", "Creative", "Technology"],
+  },
+
+  {
     slug: "raw-rewind",
     category: "media",
+    code: "MED-002",
     title: "Raw & Rewind",
     description:
       "A long-form podcast exploring technology, culture, and the human stories behind innovation.",
-    status: "Live",
-    published: "2026",
+    status: "paused",
+    tags: ["Podcast", "Media", "Interview"],
+  },
+
+  {
+    slug: "youtube",
+    category: "media",
+    code: "ENV-001",
+    title: "YouTube",
+    description:
+      "A long-form podcast exploring technology, culture, and the human stories behind innovation.",
+    status: "live",
+    tags: ["Podcast", "Media", "Interview"],
+  },
+
+  {
+    slug: "twitch",
+    category: "media",
+    code: "ENV-002",
+    title: "Twitch",
+    description:
+      "A long-form podcast exploring technology, culture, and the human stories behind innovation.",
+    status: "live",
+    tags: ["Podcast", "Media", "Interview"],
+  },
+
+  {
+    slug: "kick",
+    category: "media",
+    code: "ENV-003",
+    title: "Kick",
+    description:
+      "A long-form podcast exploring technology, culture, and the human stories behind innovation.",
+    status: "live",
+    tags: ["Podcast", "Media", "Interview"],
+  },
+
+  {
+    slug: "patreon",
+    category: "media",
+    code: "DNR-001",
+    title: "Patreon",
+    description:
+      "A long-form podcast exploring technology, culture, and the human stories behind innovation.",
+    status: "wip",
+    tags: ["Podcast", "Media", "Interview"],
+  },
+
+  {
+    slug: "github",
+    category: "systems-startups",
+    code: "PLT-002",
+    title: "GitHub",
+    description:
+      "A long-form podcast exploring technology, culture, and the human stories behind innovation.",
+    status: "wip",
+    tags: ["Podcast", "Media", "Interview"],
+  },
+
+  {
+    slug: "linkedin",
+    category: "systems-startups",
+    code: "PLT-003",
+    title: "LinkedIn",
+    description:
+      "A long-form podcast exploring technology, culture, and the human stories behind innovation.",
+    status: "wip",
+    tags: ["Podcast", "Media", "Interview"],
+  },
+
+  {
+    slug: "nasa",
+    category: "systems-startups",
+    code: "EXP-003",
+    title: "NASA Space Apps Challenge",
+    description:
+      "A long-form podcast exploring technology, culture, and the human stories behind innovation.",
+    status: "wip",
+    tags: ["Podcast", "Media", "Interview"],
+  },
+
+  {
+    slug: "vr1",
+    category: "systems-startups",
+    code: "EXP-003",
+    title: "VR Game Design 1",
+    description:
+      "A long-form podcast exploring technology, culture, and the human stories behind innovation.",
+    status: "wip",
+    tags: ["Podcast", "Media", "Interview"],
+  },
+
+  {
+    slug: "vr2",
+    category: "systems-startups",
+    code: "EXP-003",
+    title: "VR Game Design 2",
+    description:
+      "A long-form podcast exploring technology, culture, and the human stories behind innovation.",
+    status: "wip",
+    tags: ["Podcast", "Media", "Interview"],
+  },
+
+  {
+    slug: "substack",
+    category: "writing-thought",
+    code: "PLT-003",
+    title: "Substack Blog",
+    description:
+      "A long-form podcast exploring technology, culture, and the human stories behind innovation.",
+    status: "wip",
+    tags: ["Podcast", "Media", "Interview"],
+  },
+
+  {
+    slug: "threads",
+    category: "writing-thought",
+    code: "PLT-003",
+    title: "Threads",
+    description:
+      "A long-form podcast exploring technology, culture, and the human stories behind innovation.",
+    status: "wip",
+    tags: ["Podcast", "Media", "Interview"],
+  },
+
+  {
+    slug: "reading-list",
+    category: "writing-thought",
+    code: "PLT-003",
+    title: "Reading List/Tracking & Notes App",
+    description:
+      "A long-form podcast exploring technology, culture, and the human stories behind innovation.",
+    status: "wip",
+    tags: ["Podcast", "Media", "Interview"],
+  },
+
+  {
+    slug: "fourthwall",
+    category: "design-branding",
+    code: "PLT-003",
+    title: "FourthWall",
+    description:
+      "A long-form podcast exploring technology, culture, and the human stories behind innovation.",
+    status: "wip",
+    tags: ["Podcast", "Media", "Interview"],
+  },
+
+  {
+    slug: "etsy",
+    category: "design-branding",
+    code: "PLT-003",
+    title: "Etsy",
+    description:
+      "A long-form podcast exploring technology, culture, and the human stories behind innovation.",
+    status: "wip",
+    tags: ["Podcast", "Media", "Interview"],
+  },
+
+  {
+    slug: "instagram",
+    category: "design-branding",
+    code: "PLT-003",
+    title: "Instagram",
+    description:
+      "A long-form podcast exploring technology, culture, and the human stories behind innovation.",
+    status: "wip",
+    tags: ["Podcast", "Media", "Interview"],
+  },
+
+  {
+    slug: "tiktok",
+    category: "design-branding",
+    code: "PLT-003",
+    title: "TikTok",
+    description:
+      "A long-form podcast exploring technology, culture, and the human stories behind innovation.",
+    status: "wip",
+    tags: ["Podcast", "Media", "Interview"],
+  },
+
+  {
+    slug: "novahaus",
+    category: "archive-experiments",
+    code: "PLT-003",
+    title: "Nova Haus Developments",
+    description:
+      "A long-form podcast exploring technology, culture, and the human stories behind innovation.",
+    status: "wip",
+    tags: ["Podcast", "Media", "Interview"],
+  },
+
+  {
+    slug: "ayer-massage",
+    category: "archive-experiments",
+    code: "PLT-003",
+    title: "Ayer Massage Therapy",
+    description:
+      "A long-form podcast exploring technology, culture, and the human stories behind innovation.",
+    status: "wip",
+    tags: ["Podcast", "Media", "Interview"],
+  },
+
+  {
+    slug: "m2n-remodelling",
+    category: "archive-experiments",
+    code: "PLT-003",
+    title: "M2N Remodelling",
+    description:
+      "A long-form podcast exploring technology, culture, and the human stories behind innovation.",
+    status: "wip",
+    tags: ["Podcast", "Media", "Interview"],
+  },
+
+  {
+    slug: "pro-barrow",
+    category: "archive-experiments",
+    code: "PLT-003",
+    title: "Pro Barrow",
+    description:
+      "A long-form podcast exploring technology, culture, and the human stories behind innovation.",
+    status: "wip",
+    tags: ["Podcast", "Media", "Interview"],
+  },
+
+  {
+    slug: "othive",
+    category: "archive-experiments",
+    code: "PLT-003",
+    title: "OTHive",
+    description:
+      "A long-form podcast exploring technology, culture, and the human stories behind innovation.",
+    status: "wip",
+    tags: ["Podcast", "Media", "Interview"],
+  },
+
+  {
+    slug: "f1",
+    category: "archive-experiments",
+    code: "PLT-003",
+    title: "Formula 1: Systems at Speed or Formula 1",
+    description:
+      "A visual exploration of engineering, competition, and the human systems behind motorsport.",
+    status: "wip",
+    tags: ["Podcast", "Media", "Interview"],
+  },
+
+  {
+    slug: "mma",
+    category: "archive-experiments",
+    code: "PLT-003",
+    title: "MMA: Discipline & Performance or MMA / Fight Night",
+    description:
+      "A field study of combat sports, community, and the psychology of competition.",
+    status: "wip",
+    tags: ["Podcast", "Media", "Interview"],
+  },
+
+  {
+    slug: "nhl",
+    category: "archive-experiments",
+    code: "PLT-003",
+    title: "NHL: Culture of the Game or NHL",
+    description:
+      "A field study of combat sports, community, and the psychology of competition.",
+    status: "wip",
     tags: ["Podcast", "Media", "Interview"],
   },
 ];
