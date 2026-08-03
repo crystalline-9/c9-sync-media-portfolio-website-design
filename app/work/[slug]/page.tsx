@@ -49,8 +49,22 @@ export default async function ProjectPage({
     (project) => project.category === world.slug,
   );
 
-  const portfolioProjects = categoryProjects.slice(0, 2);
-  const platforms = categoryProjects.slice(2);
+  console.log(categoryProjects);
+
+  const groupedProjects = categoryProjects.reduce(
+    (groups, project) => {
+      const section = project.section;
+
+      if (!groups[section]) {
+        groups[section] = [];
+      }
+
+      groups[section].push(project);
+
+      return groups;
+    },
+    {} as Record<string, typeof categoryProjects>,
+  );
 
   return (
     <main className="pt-24">
@@ -145,7 +159,7 @@ export default async function ProjectPage({
             </div>
 
             <div className="flex flex-col gap-6">
-              {portfolioProjects.map((project) => (
+              {groupedProjects["Projects"].map((project) => (
                 <div
                   key={project.slug}
                   className="glass rounded-2xl border border-lavender-glow/12 p-[30px] transition-all duration-300 hover:-translate-y-1 hover:border-lavender-glow/30 hover:shadow-[0_0_40px_-10px_rgba(167,139,250,0.6)]"
@@ -204,7 +218,7 @@ export default async function ProjectPage({
             </div>
 
             <div className="flex flex-col gap-6">
-              {platforms.map((project) => (
+              {groupedProjects["Platforms"].map((project) => (
                 <div
                   key={project.slug}
                   className="glass rounded-2xl border border-lavender-glow/12 p-[30px] transition-all duration-300 hover:-translate-y-1 hover:border-lavender-glow/30 hover:shadow-[0_0_40px_-10px_rgba(167,139,250,0.6)]"

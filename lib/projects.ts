@@ -1,6 +1,7 @@
 export type Project = {
   slug: string;
   category: string;
+  section: string;
   code: string;
   title: string;
   description: string;
@@ -12,6 +13,7 @@ export const projects: Project[] = [
   {
     slug: "crystalline-9",
     category: "media",
+    section: "Projects",
     code: "MED-001",
     title: "crystalline_9",
     description: "Your description goes here.",
@@ -22,6 +24,7 @@ export const projects: Project[] = [
   {
     slug: "raw-rewind",
     category: "media",
+    section: "Projects",
     code: "MED-002",
     title: "Raw & Rewind",
     description:
@@ -33,6 +36,7 @@ export const projects: Project[] = [
   {
     slug: "youtube",
     category: "media",
+    section: "Platforms",
     code: "ENV-001",
     title: "YouTube",
     description:
@@ -44,6 +48,7 @@ export const projects: Project[] = [
   {
     slug: "twitch",
     category: "media",
+    section: "Platforms",
     code: "ENV-002",
     title: "Twitch",
     description:
@@ -55,6 +60,7 @@ export const projects: Project[] = [
   {
     slug: "kick",
     category: "media",
+    section: "Platforms",
     code: "ENV-003",
     title: "Kick",
     description:
@@ -66,6 +72,7 @@ export const projects: Project[] = [
   {
     slug: "patreon",
     category: "media",
+    section: "Platforms",
     code: "DNR-001",
     title: "Patreon",
     description:
@@ -77,6 +84,7 @@ export const projects: Project[] = [
   {
     slug: "github",
     category: "systems-startups",
+    section: "Projects",
     code: "PLT-002",
     title: "GitHub",
     description:
@@ -88,6 +96,7 @@ export const projects: Project[] = [
   {
     slug: "linkedin",
     category: "systems-startups",
+    section: "Projects",
     code: "PLT-003",
     title: "LinkedIn",
     description:
@@ -99,6 +108,7 @@ export const projects: Project[] = [
   {
     slug: "nasa",
     category: "systems-startups",
+    section: "Projects",
     code: "EXP-003",
     title: "NASA Space Apps Challenge",
     description:
@@ -110,6 +120,7 @@ export const projects: Project[] = [
   {
     slug: "vr1",
     category: "systems-startups",
+    section: "Projects",
     code: "EXP-003",
     title: "VR Game Design 1",
     description:
@@ -121,6 +132,7 @@ export const projects: Project[] = [
   {
     slug: "vr2",
     category: "systems-startups",
+    section: "Projects",
     code: "EXP-003",
     title: "VR Game Design 2",
     description:
@@ -132,6 +144,7 @@ export const projects: Project[] = [
   {
     slug: "substack",
     category: "writing-thought",
+    section: "Projects",
     code: "PLT-003",
     title: "Substack Blog",
     description:
@@ -143,6 +156,7 @@ export const projects: Project[] = [
   {
     slug: "threads",
     category: "writing-thought",
+    section: "Projects",
     code: "PLT-003",
     title: "Threads",
     description:
@@ -154,6 +168,7 @@ export const projects: Project[] = [
   {
     slug: "reading-list",
     category: "writing-thought",
+    section: "Projects",
     code: "PLT-003",
     title: "Reading List/Tracking & Notes App",
     description:
@@ -165,6 +180,7 @@ export const projects: Project[] = [
   {
     slug: "fourthwall",
     category: "design-branding",
+    section: "Projects",
     code: "PLT-003",
     title: "FourthWall",
     description:
@@ -176,6 +192,7 @@ export const projects: Project[] = [
   {
     slug: "etsy",
     category: "design-branding",
+    section: "Projects",
     code: "PLT-003",
     title: "Etsy",
     description:
@@ -187,6 +204,7 @@ export const projects: Project[] = [
   {
     slug: "instagram",
     category: "design-branding",
+    section: "Projects",
     code: "PLT-003",
     title: "Instagram",
     description:
@@ -198,6 +216,7 @@ export const projects: Project[] = [
   {
     slug: "tiktok",
     category: "design-branding",
+    section: "Projects",
     code: "PLT-003",
     title: "TikTok",
     description:
@@ -209,6 +228,7 @@ export const projects: Project[] = [
   {
     slug: "novahaus",
     category: "archive-experiments",
+    section: "Projects",
     code: "PLT-003",
     title: "Nova Haus Developments",
     description:
@@ -220,6 +240,7 @@ export const projects: Project[] = [
   {
     slug: "ayer-massage",
     category: "archive-experiments",
+    section: "Projects",
     code: "PLT-003",
     title: "Ayer Massage Therapy",
     description:
@@ -231,6 +252,7 @@ export const projects: Project[] = [
   {
     slug: "m2n-remodelling",
     category: "archive-experiments",
+    section: "Projects",
     code: "PLT-003",
     title: "M2N Remodelling",
     description:
@@ -242,6 +264,7 @@ export const projects: Project[] = [
   {
     slug: "pro-barrow",
     category: "archive-experiments",
+    section: "Projects",
     code: "PLT-003",
     title: "Pro Barrow",
     description:
@@ -253,6 +276,7 @@ export const projects: Project[] = [
   {
     slug: "othive",
     category: "archive-experiments",
+    section: "Projects",
     code: "PLT-003",
     title: "OTHive",
     description:
@@ -264,6 +288,7 @@ export const projects: Project[] = [
   {
     slug: "f1",
     category: "archive-experiments",
+    section: "Projects",
     code: "PLT-003",
     title: "Formula 1: Systems at Speed or Formula 1",
     description:
@@ -275,6 +300,7 @@ export const projects: Project[] = [
   {
     slug: "mma",
     category: "archive-experiments",
+    section: "Projects",
     code: "PLT-003",
     title: "MMA: Discipline & Performance or MMA / Fight Night",
     description:
@@ -286,6 +312,7 @@ export const projects: Project[] = [
   {
     slug: "nhl",
     category: "archive-experiments",
+    section: "Projects",
     code: "PLT-003",
     title: "NHL: Culture of the Game or NHL",
     description:
