@@ -7,6 +7,7 @@ import { worlds, getWorld, accentClasses } from "@/lib/worlds";
 import { Footer } from "@/components/footer";
 import { cn } from "@/lib/utils";
 import { projects } from "@/lib/projects";
+import { ProjectCard } from "@/components/project-card";
 
 export function generateStaticParams() {
   return worlds.map((w) => ({ slug: w.slug }));
@@ -274,20 +275,11 @@ export default async function ProjectPage({
             </div>
           </div>
         </article>
-*/}
 
-        <article className="flex flex-col gap-10">
-          {projectSections.map(([sectionName, sectionProjects]) => (
-            <div key={sectionName}>
-              <div className="relative -left-[20px] mb-6">
-                <h2 className="font-serif text-2xl text-foreground">
-                  {sectionName}
-                </h2>
-              </div>
 
-              <div className="flex flex-col gap-6">
-                {sectionProjects.map((project) => (
-                  <div
+// Project Card 
+
+        <div
                     key={project.slug}
                     className="glass rounded-2xl border border-lavender-glow/12 p-[30px] transition-all duration-300 hover:-translate-y-1 hover:border-lavender-glow/30 hover:shadow-[0_0_40px_-10px_rgba(167,139,250,0.6)]"
                   >
@@ -335,6 +327,24 @@ export default async function ProjectPage({
                       ))}
                     </div>
                   </div>
+*/}
+
+        <article className="flex flex-col gap-10">
+          {projectSections.map(([sectionName, sectionProjects]) => (
+            <div key={sectionName}>
+              <div className="relative -left-[20px] mb-6">
+                <h2 className="font-serif text-2xl text-foreground">
+                  {sectionName}
+                </h2>
+              </div>
+
+              <div className="flex flex-col gap-6">
+                {sectionProjects.map((project) => (
+                  <ProjectCard
+                    key={project.slug}
+                    project={project}
+                    accent={accent}
+                  />
                 ))}
               </div>
             </div>
