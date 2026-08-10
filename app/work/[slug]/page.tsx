@@ -6,7 +6,7 @@ import { ArrowLeft } from "lucide-react";
 import { worlds, getWorld, accentClasses } from "@/lib/worlds";
 import { Footer } from "@/components/footer";
 import { cn } from "@/lib/utils";
-import { projects } from "@/lib/projects";
+import { projects, getProject } from "@/lib/projects";
 import { ProjectCard } from "@/components/project-card";
 
 export function generateStaticParams() {

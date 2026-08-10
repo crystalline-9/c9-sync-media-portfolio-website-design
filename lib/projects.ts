@@ -7,6 +7,16 @@ export type Project = {
   description: string;
   status: "live" | "paused" | "wip";
   tags: string[];
+
+  // Project detail content
+  longDescription?: string;
+  purpose?: string;
+  process?: string;
+  outcome?: string;
+  stack?: string[];
+  year?: string;
+  liveUrl?: string;
+  repoUrl?: string;
 };
 
 export const projects: Project[] = [
@@ -19,6 +29,12 @@ export const projects: Project[] = [
     description: "Your description goes here.",
     status: "live",
     tags: ["Platform", "Creative", "Technology"],
+
+    longDescription:
+      "crystalline_9 is a creative technology platform exploring the intersection of media, storytelling, and digital systems.",
+
+    purpose:
+      "To create a space where creative work, technology, and experimentation can exist within the same ecosystem.",
   },
 
   {
@@ -321,3 +337,7 @@ export const projects: Project[] = [
     tags: ["Podcast", "Media", "Interview"],
   },
 ];
+
+export function getProject(slug: string) {
+  return projects.find((project) => project.slug === slug);
+}
