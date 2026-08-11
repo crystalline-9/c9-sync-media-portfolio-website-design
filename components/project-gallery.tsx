@@ -15,14 +15,14 @@ export default function ProjectGallery() {
   return (
     <>
       {/* Gallery */}
-      <section className="mt-16">
+      <section className="relative mt-16 -mx-6 sm:-mx-10 lg:-mx-20">
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {images.map((src, index) => (
             <button
               key={src}
               type="button"
               onClick={() => setSelectedImage(src)}
-              className="group relative aspect-[4/3] overflow-hidden rounded-sm border border-border bg-panel text-left transition-all duration-300 hover:-translate-y-1 hover:border-lavender-glow/40"
+              className="group relative aspect-[3/2] overflow-hidden rounded-sm border border-border bg-panel text-left transition-all duration-300 hover:-translate-y-1 hover:border-lavender-glow/40"
             >
               <Image
                 src={src}

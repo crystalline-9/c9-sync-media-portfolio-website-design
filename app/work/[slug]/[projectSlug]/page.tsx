@@ -73,7 +73,7 @@ export default async function ProjectDetailPage({
           <div className="mt-8">
             <a
               href="#"
-              className="group relative inline-flex items-center gap-2 overflow-hidden rounded-xl border border-cyan-mana/40 bg-cyan-mana/10 px-7 py-3.5 text-sm font-medium tracking-wide text-foreground transition-all duration-300 hover:bg-cyan-mana/20 hover:shadow-[0_0_30px_-6px_rgba(57,213,255,0.6)]"
+              className="group relative mt-4 inline-flex items-center gap-2 overflow-hidden rounded-xl border border-cyan-mana/40 bg-cyan-mana/10 px-7 py-3.5 text-sm font-medium tracking-wide text-foreground transition-all duration-300 hover:bg-cyan-mana/20 hover:shadow-[0_0_30px_-6px_rgba(57,213,255,0.6)]"
             >
               YouTube Channel
               <ExternalLink className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -83,6 +83,82 @@ export default async function ProjectDetailPage({
 
         {/* Project gallery */}
         <ProjectGallery />
+
+        {/* Project details */}
+        <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-[2fr_1fr]">
+          {/* Left column — we'll build this next */}
+          <div>
+            {/* Project details */}
+            <div className="glass rounded-2xl border border-lavender-glow/12 p-6 sm:p-8 lg:col-span-2">
+              <div className="space-y-8">
+                {/* Description */}
+                <div>
+                  <h2 className="font-serif text-xl text-foreground">
+                    Description
+                  </h2>
+
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                    An ongoing multimedia storytelling project exploring
+                    culture, identity, and the connections between ideas,
+                    people, and experiences.
+                  </p>
+                </div>
+
+                {/* Purpose */}
+                <div>
+                  <h2 className="font-serif text-xl text-foreground">
+                    Purpose
+                  </h2>
+
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                    To create a space where creative work, technology, and
+                    experimentation can exist within the same ecosystem.
+                  </p>
+                </div>
+
+                {/* Process */}
+                <div>
+                  <h2 className="font-serif text-xl text-foreground">
+                    Process
+                  </h2>
+
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                    Research, storytelling, visual experimentation, and
+                    community engagement come together throughout the project.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right column — Skill Stack */}
+          <div className="glass h-fit self-start rounded-2xl border border-lavender-glow/12 p-6 sm:p-8">
+            <div className="mb-5 flex items-center gap-2">
+              <span className="size-2 rounded-full bg-moss-green shadow-[0_0_12px_rgba(47,122,78,0.35)]" />
+
+              <h2 className="font-serif text-xl text-foreground">
+                Skill Stack
+              </h2>
+            </div>
+
+            <div className="flex flex-wrap gap-2.5">
+              {[
+                "OBS Studio",
+                "CapCut",
+                "Storytelling",
+                "Research",
+                "Community Engagement",
+              ].map((skill) => (
+                <span
+                  key={skill}
+                  className="rounded-full border border-moss-green/30 bg-moss-green/5 px-3.5 py-1.5 text-sm text-secondary-foreground"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
       </article>
     </main>
   );
