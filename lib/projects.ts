@@ -26,7 +26,8 @@ export const projects: Project[] = [
     section: "Projects",
     code: "MED-001",
     title: "crystalline_9",
-    description: "Your description goes here.",
+    description:
+      "An ongoing multimedia storytelling project exploring culture, identity, and the connections between people, ideas, and experiences through digital media.",
     status: "live",
     tags: ["Platform", "Creative", "Technology"],
 
