@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { notFound } from "next/navigation";
 import { getProject } from "@/lib/projects";
+import ProjectGallery from "@/components/project-gallery";
 
 export default async function ProjectDetailPage({
   params,
@@ -79,6 +80,9 @@ export default async function ProjectDetailPage({
             </a>
           </div>
         </header>
+
+        {/* Project gallery */}
+        <ProjectGallery />
       </article>
     </main>
   );
