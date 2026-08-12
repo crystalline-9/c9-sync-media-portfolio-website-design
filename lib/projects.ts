@@ -13,7 +13,8 @@ export type Project = {
   purpose?: string;
   process?: string;
   outcome?: string;
-  stack?: string[];
+  skills?: string[];
+  images?: string[];
   year?: string;
   liveUrl?: string;
   repoUrl?: string;
@@ -26,9 +27,12 @@ export const projects: Project[] = [
     section: "Projects",
     code: "MED-001",
     title: "crystalline_9",
+
     description:
       "An ongoing multimedia storytelling project exploring culture, identity, and the connections between people, ideas, and experiences through digital media.",
+
     status: "live",
+
     tags: ["Platform", "Creative", "Technology"],
 
     longDescription:
@@ -36,6 +40,30 @@ export const projects: Project[] = [
 
     purpose:
       "To create a space where creative work, technology, and experimentation can exist within the same ecosystem.",
+
+    process:
+      "Research, storytelling, visual experimentation, and community engagement come together throughout the project.",
+
+    outcome: "",
+
+    skills: [
+      "OBS Studio",
+      "CapCut",
+      "Storytelling",
+      "Research",
+      "Community Engagement",
+    ],
+
+    images: [
+      "/projects/crystalline-9/01.jpg",
+      "/projects/crystalline-9/02.jpg",
+      "/projects/crystalline-9/03.jpg",
+    ],
+
+    year: "2026",
+
+    liveUrl: "",
+    repoUrl: "",
   },
 
   {
