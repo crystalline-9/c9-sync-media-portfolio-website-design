@@ -17,6 +17,7 @@ export type Project = {
   images?: string[];
   year?: string;
   liveUrl?: string;
+  linkTitle?: string;
   repoUrl?: string;
 };
 
@@ -55,14 +56,15 @@ export const projects: Project[] = [
     ],
 
     images: [
-      "/projects/crystalline-9/01.jpg",
-      "/projects/crystalline-9/02.jpg",
-      "/projects/crystalline-9/03.jpg",
+      "/projects/crystalline-9/01.png",
+      "/projects/crystalline-9/02.png",
+      "/projects/crystalline-9/03.png",
     ],
 
     year: "2026",
 
-    liveUrl: "",
+    liveUrl: "https://www.youtube.com/@crystalline_9",
+    linkTitle: "YouTube Channel",
     repoUrl: "",
   },
 

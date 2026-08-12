@@ -36,15 +36,12 @@ export default async function ProjectDetailPage({
           <span className="text-xs font-medium uppercase tracking-[0.3em] text-cyan-mana/80">
             Project Page
           </span>
-
           <h1 className="mt-4 font-serif text-[48px] font-medium leading-[1.1] tracking-tight sm:text-[48px]">
             {project.title}
           </h1>
-
           <p className="mt-6 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
             {project.description}
           </p>
-
           {/* Status + tags */}
           <div className="mt-6 flex flex-wrap items-center gap-2.5">
             {project.status && (
@@ -70,17 +67,23 @@ export default async function ProjectDetailPage({
               </span>
             ))}
           </div>
-
-          {/* External link */}
-          <div className="mt-8">
-            <a
-              href="#"
-              className="group relative mt-4 inline-flex items-center gap-2 overflow-hidden rounded-xl border border-cyan-mana/40 bg-cyan-mana/10 px-7 py-3.5 text-sm font-medium tracking-wide text-foreground transition-all duration-300 hover:bg-cyan-mana/20 hover:shadow-[0_0_30px_-6px_rgba(57,213,255,0.6)]"
-            >
-              YouTube Channel
-              <ExternalLink className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
-          </div>
+          {/* External link */}{" "}
+          {project.liveUrl && (
+            <div className="mt-8">
+              {" "}
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative mt-4 inline-flex items-center gap-2 overflow-hidden rounded-xl border border-cyan-mana/40 bg-cyan-mana/10 px-7 py-3.5 text-sm font-medium tracking-wide text-foreground transition-all duration-300 hover:bg-cyan-mana/20 hover:shadow-[0_0_30px_-6px_rgba(57,213,255,0.6)]"
+                title={project.linkTitle}
+              >
+                {" "}
+                {project.linkTitle}{" "}
+                <ExternalLink className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />{" "}
+              </a>{" "}
+            </div>
+          )}
         </header>
 
         {/* Project gallery */}
