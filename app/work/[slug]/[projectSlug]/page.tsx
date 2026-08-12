@@ -3,6 +3,8 @@ import { ArrowLeft, ExternalLink } from "lucide-react";
 import { notFound } from "next/navigation";
 import { getProject } from "@/lib/projects";
 import ProjectGallery from "@/components/project-gallery";
+import { cn } from "@/lib/utils";
+import { Footer } from "@/components/footer";
 
 export default async function ProjectDetailPage({
   params,
@@ -31,9 +33,9 @@ export default async function ProjectDetailPage({
         </div>
         {/* Project header */}
         <header className="mt-10 flex flex-col items-center text-center">
-          <p className="text-[11px] font-medium uppercase tracking-[3.6px] leading-4 text-[#288da6]">
+          <span className="text-xs font-medium uppercase tracking-[0.3em] text-cyan-mana/80">
             Project Page
-          </p>
+          </span>
 
           <h1 className="mt-4 font-serif text-[48px] font-medium leading-[1.1] tracking-tight sm:text-[48px]">
             {project.title}
@@ -159,7 +161,94 @@ export default async function ProjectDetailPage({
             </div>
           </div>
         </div>
+
+        {/* Related Projects */}
+        <section className="relative mt-16 -mx-6 sm:-mx-10 lg:-mx-12">
+          {/* Section heading */}
+          <div className="mb-6 flex items-center gap-3">
+            <span className="size-2 rounded-full bg-lavender-glow shadow-[0_0_12px_rgba(167,139,250,0.35)]" />
+
+            <h2 className="font-serif text-2xl text-foreground">
+              Related Projects
+            </h2>
+          </div>
+
+          {/* Project cards */}
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+            {[
+              {
+                title: "Project One",
+                code: "MED-001",
+                status: "live",
+                description: "A short description of the related project.",
+                tags: ["Storytelling", "Video"],
+              },
+              {
+                title: "Project Two",
+                code: "MED-002",
+                status: "wip",
+                description: "A short description of the related project.",
+                tags: ["Creative", "Design"],
+              },
+              {
+                title: "Project Three",
+                code: "MED-003",
+                status: "paused",
+                description: "A short description of the related project.",
+                tags: ["Research", "Community"],
+              },
+            ].map((project) => (
+              <Link
+                key={project.title}
+                href="#"
+                className="glass rounded-2xl border border-lavender-glow/12 p-7 transition-all duration-300 hover:-translate-y-1 hover:border-lavender-glow/30 hover:shadow-[0_0_30px_-10px_rgba(167,139,250,0.6)]"
+              >
+                <div className="flex items-start justify-between gap-3">
+                  <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                    {project.code}
+                  </span>
+
+                  <span
+                    className={cn(
+                      "rounded-full border px-2.5 py-1 text-[9px] font-medium uppercase tracking-wide",
+                      project.status === "live" &&
+                        "border-moss-green text-moss-green",
+                      project.status === "wip" &&
+                        "border-lavender-glow text-lavender-glow",
+                      project.status === "paused" &&
+                        "border-muted-foreground text-muted-foreground",
+                    )}
+                  >
+                    ● {project.status}
+                  </span>
+                </div>
+
+                <h3 className="mt-5 font-serif text-xl font-medium text-foreground">
+                  {project.title}
+                </h3>
+
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  {project.description}
+                </p>
+
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-[6px] border border-muted-foreground/40 px-2.5 py-1 text-[10px] text-muted-foreground"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
       </article>
+      <div className="mt-20">
+        <Footer />
+      </div>
     </main>
   );
 }
