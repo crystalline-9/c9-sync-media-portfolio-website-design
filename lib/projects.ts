@@ -74,10 +74,40 @@ export const projects: Project[] = [
     section: "Projects",
     code: "MED-002",
     title: "Raw & Rewind",
+
     description:
-      "A long-form podcast exploring technology, culture, and the human stories behind innovation.",
+      "A live watch-along and commentary project revisiting UFC events, professional wrestling, and the stories surrounding combat sports.",
+
     status: "paused",
-    tags: ["Podcast", "Media", "Interview"],
+
+    tags: ["Podcast", "Media", "UFC", "Wrestling"],
+
+    longDescription:
+      "Raw & Rewind is a live media project built around watching, revisiting, and discussing combat sports. The project follows UFC numbered events, professional wrestling, and memorable moments across both worlds, turning the experience of watching together into an ongoing conversation.",
+
+    purpose:
+      "To create an informal space for fans to experience combat sports together through commentary, discussion, humour, and shared reactions.",
+
+    process:
+      "Live watch-alongs combine event viewing, real-time commentary, discussion, and audience interaction. Streams can also be developed into shorter videos, clips, and other pieces of media after the broadcast.",
+
+    outcome: "",
+
+    skills: [
+      "OBS Studio",
+      "Live Streaming",
+      "Commentary",
+      "Combat Sports",
+      "Community Engagement",
+    ],
+
+    images: [],
+
+    year: "2026",
+
+    liveUrl: "",
+    linkTitle: "",
+    repoUrl: "",
   },
 
   {
@@ -86,10 +116,40 @@ export const projects: Project[] = [
     section: "Platforms",
     code: "ENV-001",
     title: "YouTube",
+
     description:
-      "A long-form podcast exploring technology, culture, and the human stories behind innovation.",
+      "A video publishing and discovery platform used to share long-form content, livestreams, edited videos, and recorded projects with a broad public audience.",
+
     status: "live",
-    tags: ["Podcast", "Media", "Interview"],
+
+    tags: ["Video", "Publishing", "Streaming", "Community"],
+
+    longDescription:
+      "YouTube is one of the primary platforms I use to publish and organize video work. It functions as both a public archive and a distribution channel, allowing livestreams, edited videos, watch-alongs, commentary, and other creative projects to reach audiences beyond a single social network.",
+
+    purpose:
+      "To make creative work accessible to a broad audience while providing a durable home for video projects that can be discovered, watched, shared, and revisited over time.",
+
+    process:
+      "Content can move from livestreams and recorded sessions into edited videos, clips, playlists, and other formats. YouTube acts as the central publishing layer while individual projects and series can develop their own audiences and identities within the platform.",
+
+    outcome: "",
+
+    skills: [
+      "Video Production",
+      "Live Streaming",
+      "Content Strategy",
+      "Audience Development",
+      "Digital Publishing",
+    ],
+
+    images: [],
+
+    year: "2026",
+
+    liveUrl: "https://www.youtube.com/@crystalline_9",
+    linkTitle: "YouTube Channel",
+    repoUrl: "",
   },
 
   {
@@ -98,10 +158,40 @@ export const projects: Project[] = [
     section: "Platforms",
     code: "ENV-002",
     title: "Twitch",
+
     description:
-      "A long-form podcast exploring technology, culture, and the human stories behind innovation.",
+      "A live-streaming platform used to broadcast projects, commentary, watch-alongs, and conversations in real time with an interactive audience.",
+
     status: "live",
-    tags: ["Podcast", "Media", "Interview"],
+
+    tags: ["Live Streaming", "Community", "Commentary", "Media"],
+
+    longDescription:
+      "Twitch is the live and interactive side of my media work. I use it to bring audiences into projects as they happen, particularly through live commentary, watch-alongs, gaming, and conversations around culture and current events.",
+
+    purpose:
+      "To create a more immediate and participatory space where audiences can experience projects alongside me rather than simply watching the finished result.",
+
+    process:
+      "Streams are built around live broadcasting, real-time commentary, audience interaction, and spontaneous discussion. Longer streams can also become source material for edited videos, clips, and other content across the wider media ecosystem.",
+
+    outcome: "",
+
+    skills: [
+      "OBS Studio",
+      "Live Streaming",
+      "Commentary",
+      "Audience Interaction",
+      "Community Engagement",
+    ],
+
+    images: [],
+
+    year: "2026",
+
+    liveUrl: "",
+    linkTitle: "Twitch Channel",
+    repoUrl: "",
   },
 
   {

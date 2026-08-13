@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { notFound } from "next/navigation";
-import { getProject } from "@/lib/projects";
+import { getProject, projects } from "@/lib/projects";
 import ProjectGallery from "@/components/project-gallery";
 import { cn } from "@/lib/utils";
 import { Footer } from "@/components/footer";
@@ -16,6 +16,13 @@ export default async function ProjectDetailPage({
   const project = getProject(projectSlug);
 
   if (!project) notFound();
+
+  const relatedProjects = projects
+    .filter(
+      (item) =>
+        item.category === project.category && item.slug !== project.slug,
+    )
+    .slice(0, 3);
 
   return (
     <main className="pt-24">
@@ -91,47 +98,61 @@ export default async function ProjectDetailPage({
 
         {/* Project details */}
         <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-[2fr_1fr]">
-          {/* Left column — we'll build this next */}
+          {/* Left column — Project Details */}
           <div>
-            {/* Project details */}
-            <div className="glass rounded-2xl border border-lavender-glow/12 p-6 sm:p-8 lg:col-span-2">
+            <div className="glass rounded-2xl border border-lavender-glow/12 p-6 sm:p-8">
               <div className="space-y-8">
                 {/* Description */}
-                <div>
-                  <h2 className="font-serif text-xl text-foreground">
-                    Description
-                  </h2>
+                {project.longDescription && (
+                  <div>
+                    <h2 className="font-serif text-xl text-foreground">
+                      Description
+                    </h2>
 
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                    An ongoing multimedia storytelling project exploring
-                    culture, identity, and the connections between ideas,
-                    people, and experiences.
-                  </p>
-                </div>
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                      {project.longDescription}
+                    </p>
+                  </div>
+                )}
 
                 {/* Purpose */}
-                <div>
-                  <h2 className="font-serif text-xl text-foreground">
-                    Purpose
-                  </h2>
+                {project.purpose && (
+                  <div>
+                    <h2 className="font-serif text-xl text-foreground">
+                      Purpose
+                    </h2>
 
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                    To create a space where creative work, technology, and
-                    experimentation can exist within the same ecosystem.
-                  </p>
-                </div>
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                      {project.purpose}
+                    </p>
+                  </div>
+                )}
 
                 {/* Process */}
-                <div>
-                  <h2 className="font-serif text-xl text-foreground">
-                    Process
-                  </h2>
+                {project.process && (
+                  <div>
+                    <h2 className="font-serif text-xl text-foreground">
+                      Process
+                    </h2>
 
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                    Research, storytelling, visual experimentation, and
-                    community engagement come together throughout the project.
-                  </p>
-                </div>
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                      {project.process}
+                    </p>
+                  </div>
+                )}
+
+                {/* Outcome */}
+                {project.outcome && (
+                  <div>
+                    <h2 className="font-serif text-xl text-foreground">
+                      Outcome
+                    </h2>
+
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                      {project.outcome}
+                    </p>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -147,13 +168,7 @@ export default async function ProjectDetailPage({
             </div>
 
             <div className="flex flex-wrap gap-2.5">
-              {[
-                "OBS Studio",
-                "CapCut",
-                "Storytelling",
-                "Research",
-                "Community Engagement",
-              ].map((skill) => (
+              {project.skills?.map((skill) => (
                 <span
                   key={skill}
                   className="rounded-full border border-moss-green/30 bg-moss-green/5 px-3.5 py-1.5 text-sm text-secondary-foreground"
@@ -178,64 +193,42 @@ export default async function ProjectDetailPage({
 
           {/* Project cards */}
           <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-            {[
-              {
-                title: "Project One",
-                code: "MED-001",
-                status: "live",
-                description: "A short description of the related project.",
-                tags: ["Storytelling", "Video"],
-              },
-              {
-                title: "Project Two",
-                code: "MED-002",
-                status: "wip",
-                description: "A short description of the related project.",
-                tags: ["Creative", "Design"],
-              },
-              {
-                title: "Project Three",
-                code: "MED-003",
-                status: "paused",
-                description: "A short description of the related project.",
-                tags: ["Research", "Community"],
-              },
-            ].map((project) => (
+            {relatedProjects.map((relatedProject) => (
               <Link
-                key={project.title}
-                href="#"
+                key={relatedProject.slug}
+                href={`/work/${relatedProject.category}/${relatedProject.slug}`}
                 className="glass rounded-2xl border border-lavender-glow/12 p-7 transition-all duration-300 hover:-translate-y-1 hover:border-lavender-glow/30 hover:shadow-[0_0_30px_-10px_rgba(167,139,250,0.6)]"
               >
                 <div className="flex items-start justify-between gap-3">
                   <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
-                    {project.code}
+                    {relatedProject.code}
                   </span>
 
                   <span
                     className={cn(
                       "rounded-full border px-2.5 py-1 text-[9px] font-medium uppercase tracking-wide",
-                      project.status === "live" &&
+                      relatedProject.status === "live" &&
                         "border-moss-green text-moss-green",
-                      project.status === "wip" &&
+                      relatedProject.status === "wip" &&
                         "border-lavender-glow text-lavender-glow",
-                      project.status === "paused" &&
+                      relatedProject.status === "paused" &&
                         "border-muted-foreground text-muted-foreground",
                     )}
                   >
-                    ● {project.status}
+                    ● {relatedProject.status}
                   </span>
                 </div>
 
                 <h3 className="mt-5 font-serif text-xl font-medium text-foreground">
-                  {project.title}
+                  {relatedProject.title}
                 </h3>
 
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  {project.description}
+                  {relatedProject.description}
                 </p>
 
                 <div className="mt-5 flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
+                  {relatedProject.tags.map((tag) => (
                     <span
                       key={tag}
                       className="rounded-[6px] border border-muted-foreground/40 px-2.5 py-1 text-[10px] text-muted-foreground"
