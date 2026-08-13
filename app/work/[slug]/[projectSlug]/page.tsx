@@ -87,7 +87,7 @@ export default async function ProjectDetailPage({
         </header>
 
         {/* Project gallery */}
-        <ProjectGallery />
+        <ProjectGallery images={project.images ?? []} />
 
         {/* Project details */}
         <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-[2fr_1fr]">

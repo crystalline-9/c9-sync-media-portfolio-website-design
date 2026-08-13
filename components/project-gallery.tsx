@@ -3,13 +3,11 @@
 import { useState } from "react";
 import Image from "next/image";
 
-const images = [
-  "/placeholder-1.jpg",
-  "/placeholder-2.jpg",
-  "/placeholder-3.jpg",
-];
+type ProjectGalleryProps = {
+  images: string[];
+};
 
-export default function ProjectGallery() {
+export default function ProjectGallery({ images }: ProjectGalleryProps) {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   return (
@@ -31,11 +29,11 @@ export default function ProjectGallery() {
                 className="object-cover"
               />
 
-              <div className="absolute inset-0 flex items-center justify-center">
+              {/*<div className="absolute inset-0 flex items-center justify-center">
                 <span className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
                   Capture {String(index + 1).padStart(2, "0")}
                 </span>
-              </div>
+              </div>*/}
             </button>
           ))}
         </div>
