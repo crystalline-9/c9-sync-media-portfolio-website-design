@@ -5,7 +5,7 @@ export type Project = {
   code: string;
   title: string;
   description: string;
-  status: "live" | "paused" | "wip";
+  status: "live" | "paused" | "wip" | "archived";
   tags: string[];
 
   // Project detail content

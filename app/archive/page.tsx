@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Footer } from "@/components/footer";
 import { cn } from "@/lib/utils";
+import { projects } from "@/lib/projects";
 
 export const metadata: Metadata = {
   title: "Archive — crystalline_9",
@@ -9,58 +10,40 @@ export const metadata: Metadata = {
     "A living archive of experiments, community projects, and half-finished worlds.",
 };
 
-const experiments = [
-  {
-    title: "Forest OS prototype",
-    year: "2026",
-    status: "In progress",
-    accent: "cyan",
-    note: "A calm, game-like interface for organizing creative work.",
-  },
-  {
-    title: "Neighborhood story map",
-    year: "2025",
-    status: "Live",
-    accent: "green",
-    note: "A community-sourced map of small local histories.",
-  },
-  {
-    title: "Attention journal",
-    year: "2025",
-    status: "Paused",
-    accent: "violet",
-    note: "A daily tool for noticing where the day actually went.",
-  },
-  {
-    title: "Open type specimen",
-    year: "2024",
-    status: "Live",
-    accent: "green",
-    note: "A free, well-documented typographic system for small teams.",
-  },
-  {
-    title: "Field recordings vol. 1",
-    year: "2024",
-    status: "Archived",
-    accent: "violet",
-    note: "Ambient sound studies turned into a listening room.",
-  },
-  {
-    title: "Systems card deck",
-    year: "2023",
-    status: "Archived",
-    accent: "cyan",
-    note: "A deck of mental models for thinking in loops.",
-  },
-];
+const archiveProjects = projects.map((project) => ({
+  slug: project.slug,
+  category: project.category,
+  year: project.year ?? "",
+  title: project.title,
+  description: project.description,
+  status: project.status,
+}));
 
-const accentMap: Record<string, string> = {
-  cyan: "text-cyan-mana border-cyan-mana/40",
-  green: "text-moss-green border-moss-green/40",
-  violet: "text-lavender-glow border-lavender-glow/40",
+const statusClasses: Record<string, string> = {
+  live: "text-moss-green border-moss-green/40",
+  wip: "text-lavender-glow border-lavender-glow/40",
+  paused: "text-muted-foreground border-muted-foreground/40",
+  archived: "text-muted-foreground border-muted-foreground/40",
 };
 
-export default function ArchivePage() {
+export default async function ArchivePage({
+  searchParams,
+}: {
+  searchParams: Promise<{ page?: string }>;
+}) {
+  const { page } = await searchParams;
+
+  const currentPage = Math.max(1, Number(page) || 1);
+  const projectsPerPage = 10;
+
+  const totalPages = Math.ceil(archiveProjects.length / projectsPerPage);
+
+  const startIndex = (currentPage - 1) * projectsPerPage;
+
+  const paginatedProjects = archiveProjects.slice(
+    startIndex,
+    startIndex + projectsPerPage,
+  );
   return (
     <main className="pt-28">
       <div className="mx-auto max-w-4xl px-6">
@@ -78,12 +61,12 @@ export default function ArchivePage() {
         </header>
 
         <div className="mt-12 overflow-hidden rounded-2xl border border-lavender-glow/12 glass">
-          {experiments.map((x, i) => (
+          {paginatedProjects.map((x, i) => (
             <div
               key={x.title}
               className={cn(
                 "group flex items-center gap-4 px-5 py-4 transition-colors hover:bg-midnight-pine/40 sm:px-6",
-                i !== experiments.length - 1 &&
+                i !== paginatedProjects.length - 1 &&
                   "border-b border-lavender-glow/8",
               )}
             >
@@ -95,13 +78,13 @@ export default function ArchivePage() {
                   {x.title}
                 </span>
                 <span className="truncate text-sm text-muted-foreground">
-                  {x.note}
+                  {x.description}
                 </span>
               </div>
               <span
                 className={cn(
                   "shrink-0 rounded-full border px-3 py-1 text-[11px] font-medium uppercase tracking-wider",
-                  accentMap[x.accent],
+                  statusClasses[x.status],
                 )}
               >
                 {x.status}
@@ -109,6 +92,45 @@ export default function ArchivePage() {
             </div>
           ))}
         </div>
+
+        {totalPages > 1 && (
+          <div className="mt-8 flex items-center justify-center gap-2">
+            {currentPage > 1 && (
+              <Link
+                href={`/archive?page=${currentPage - 1}`}
+                className="rounded-lg  px-3 py-2 text-xs text-muted-foreground transition-colors hover:text-foreground"
+              >
+                ←
+              </Link>
+            )}
+
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+              (pageNumber) => (
+                <Link
+                  key={pageNumber}
+                  href={`/archive?page=${pageNumber}`}
+                  className={cn(
+                    "rounded-lg px-3 py-2 text-xs transition-colors",
+                    pageNumber === currentPage
+                      ? "text-cyan-mana"
+                      : "text-muted-foreground  hover:text-foreground",
+                  )}
+                >
+                  {pageNumber}
+                </Link>
+              ),
+            )}
+
+            {currentPage < totalPages && (
+              <Link
+                href={`/archive?page=${currentPage + 1}`}
+                className="rounded-lg px-3 py-2 text-xs text-muted-foreground transition-colors hover:text-foreground"
+              >
+                →
+              </Link>
+            )}
+          </div>
+        )}
 
         <p className="mt-8 text-center text-sm text-muted-foreground">
           Looking for finished worlds instead?{" "}
