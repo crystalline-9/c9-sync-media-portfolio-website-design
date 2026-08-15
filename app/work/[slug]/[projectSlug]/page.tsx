@@ -31,11 +31,18 @@ export default async function ProjectDetailPage({
         <div className="pt-8">
           <Link
             href={`/work/${project.category}`}
-            className="inline-flex items-center gap-2 font-sans text-[10px] font-medium uppercase tracking-[0.26em] leading-4 text-muted-foreground transition-colors duration-200 hover:text-lavender-glow"
+            className="group inline-flex items-center gap-2 font-sans text-[10px] font-medium uppercase tracking-[0.26em] leading-4 text-muted-foreground transition-colors duration-200 hover:text-foreground"
           >
-            {" "}
-            <ArrowLeft className="size-3.5 text-muted-foreground" /> Media
-            Archive{" "}
+            <ArrowLeft className="size-3.5 text-muted-foreground transition-colors duration-200 group-hover:text-foreground" />
+            {project.category === "media"
+              ? "Media Archive"
+              : project.category === "systems-startups"
+                ? "Systems & Startups Archive"
+                : project.category === "writing-thought"
+                  ? "Writing & Thought Archive"
+                  : project.category === "design-branding"
+                    ? "Design & Branding Archive"
+                    : "Archive & Experiments"}
           </Link>
         </div>
         {/* Project header */}
