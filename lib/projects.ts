@@ -5,6 +5,7 @@ export type Project = {
   code: string;
   title: string;
   description: string;
+  note: string;
   status: "live" | "paused" | "wip" | "archived";
   tags: string[];
 
@@ -31,6 +32,8 @@ export const projects: Project[] = [
 
     description:
       "An ongoing multimedia storytelling project exploring culture, identity, and the connections between people, ideas, and experiences through digital media.",
+
+    note: "",
 
     status: "live",
 
@@ -78,6 +81,8 @@ export const projects: Project[] = [
     description:
       "A live watch-along and commentary project revisiting UFC events, professional wrestling, and the stories surrounding combat sports.",
 
+    note: "",
+
     status: "paused",
 
     tags: ["Podcast", "Media", "UFC", "Wrestling"],
@@ -119,6 +124,8 @@ export const projects: Project[] = [
 
     description:
       "A video publishing and discovery platform used to share long-form content, livestreams, edited videos, and recorded projects with a broad public audience.",
+
+    note: "",
 
     status: "live",
 
@@ -162,6 +169,8 @@ export const projects: Project[] = [
     description:
       "A live-streaming platform used to broadcast projects, commentary, watch-alongs, and conversations in real time with an interactive audience.",
 
+    note: "",
+
     status: "live",
 
     tags: ["Live Streaming", "Community", "Commentary", "Media"],
@@ -204,6 +213,8 @@ export const projects: Project[] = [
     description:
       "A live-streaming platform used for real-time broadcasts, commentary, watch-alongs, and community interaction.",
 
+    note: "",
+
     status: "live",
 
     tags: ["Live Streaming", "Community", "Commentary", "Media"],
@@ -244,6 +255,8 @@ export const projects: Project[] = [
 
     description:
       "A membership platform for supporting independent creative work and building a closer community around ongoing projects.",
+
+    note: "",
 
     status: "wip",
 
@@ -286,6 +299,8 @@ export const projects: Project[] = [
     description:
       "A development platform used to organize, version, document, and publish the code behind my digital projects.",
 
+    note: "",
+
     status: "wip",
 
     tags: ["Development", "Version Control", "Open Source", "Technology"],
@@ -327,6 +342,8 @@ export const projects: Project[] = [
 
     description:
       "A professional networking platform used to document my work, connect with people and organizations, and develop opportunities around creative and technical projects.",
+
+    note: "",
 
     status: "wip",
 
@@ -375,6 +392,8 @@ export const projects: Project[] = [
     "A collaborative space and technology project developed with Team Wave To Earth during the NASA Space Apps Challenge. The project brought together research, creative problem-solving, and technical experimentation to address a real-world challenge through an interdisciplinary team.",
     */
 
+    note: "",
+
     status: "wip",
 
     tags: ["Hackathon", "NASA", "Technology", "Innovation"],
@@ -418,6 +437,8 @@ export const projects: Project[] = [
     description:
       "An experimental virtual-world project exploring game design, interactive environments, and social experiences through Meta Horizon Worlds.",
 
+    note: "",
+
     status: "wip",
 
     tags: ["VR", "Game Design", "3D", "Interactive", "Meta Horizon"],
@@ -459,6 +480,8 @@ export const projects: Project[] = [
 
     description:
       "A practice project exploring interactive world-building and game design through Roblox.",
+
+    note: "",
 
     status: "wip",
 
@@ -502,6 +525,8 @@ export const projects: Project[] = [
     description:
       "A publishing platform for essays, reflections, and longer-form writing exploring ideas, culture, philosophy, and the connections between them.",
 
+    note: "",
+
     status: "wip",
 
     tags: ["Writing", "Essays", "Philosophy", "Culture"],
@@ -543,6 +568,8 @@ export const projects: Project[] = [
 
     description:
       "A social platform for sharing short-form thoughts, conversations, observations, and ideas as they develop.",
+
+    note: "",
 
     status: "wip",
 
@@ -586,6 +613,8 @@ export const projects: Project[] = [
     description:
       "A personal reading and knowledge-tracking system for organizing books, recording notes, and developing ideas through reading.",
 
+    note: "",
+
     status: "wip",
 
     tags: ["Reading", "Knowledge Management", "Research", "Notes"],
@@ -627,6 +656,8 @@ export const projects: Project[] = [
 
     description:
       "A creator-commerce platform used to explore merchandise, digital products, storefront design, and the relationship between a creator's brand and their audience.",
+
+    note: "",
 
     status: "wip",
 
@@ -670,6 +701,8 @@ export const projects: Project[] = [
     description:
       "A marketplace project exploring product development, storefront presentation, digital and physical goods, and how independent creative work can be presented to an online audience.",
 
+    note: "",
+
     status: "wip",
 
     tags: ["Product Design", "E-Commerce", "Branding", "Marketplace"],
@@ -711,6 +744,8 @@ export const projects: Project[] = [
 
     description:
       "A visual media platform used to develop brand identity, share creative work, build an audience, and experiment with short-form storytelling and visual communication.",
+
+    note: "",
 
     status: "wip",
 
@@ -754,6 +789,8 @@ export const projects: Project[] = [
     description:
       "A short-form video platform used to experiment with fast-paced storytelling, creative content, audience discovery, and the development of a recognizable digital presence.",
 
+    note: "",
+
     status: "wip",
 
     tags: ["Short-Form Video", "Content", "Storytelling", "Social Media"],
@@ -795,6 +832,8 @@ export const projects: Project[] = [
 
     description:
       "A developing brand and digital identity for a property development and construction venture focused on residential spaces, design, and long-term growth.",
+
+    note: "",
 
     status: "wip",
 
@@ -839,6 +878,8 @@ export const projects: Project[] = [
     description:
       "A small-business web design project focused on creating a professional digital presence and a straightforward online experience for a massage therapy practice.",
 
+    note: "",
+
     status: "wip",
 
     tags: ["Web Design", "Small Business", "Booking", "Branding"],
@@ -880,6 +921,8 @@ export const projects: Project[] = [
 
     description:
       "A small-business branding and digital design project focused on presenting residential renovation services through a clear and professional visual identity.",
+
+    note: "",
 
     status: "wip",
 
@@ -923,6 +966,8 @@ export const projects: Project[] = [
     description:
       "A product marketing and brand development project for an electric wheelbarrow company, exploring how an innovative construction tool can be positioned and communicated to its target market.",
 
+    note: "",
+
     status: "wip",
 
     tags: ["Product Marketing", "Brand Strategy", "Content", "Construction"],
@@ -965,6 +1010,8 @@ export const projects: Project[] = [
     description:
       "An experimental project exploring community, digital spaces, and the ways technology can bring people, ideas, and creative work together.",
 
+    note: "",
+
     status: "wip",
 
     tags: ["Community", "Technology", "Research", "Digital Media"],
@@ -1006,6 +1053,8 @@ export const projects: Project[] = [
 
     description:
       "A visual exploration of Formula 1 as an interconnected system of engineering, competition, strategy, technology, and human performance.",
+
+    note: "",
 
     status: "wip",
 
@@ -1050,6 +1099,8 @@ export const projects: Project[] = [
     description:
       "An ongoing exploration of mixed martial arts, combat sports, discipline, and human performance through training, observation, and engagement with the sport.",
 
+    note: "",
+
     status: "wip",
 
     tags: ["MMA", "Combat Sports", "Performance", "Training"],
@@ -1092,6 +1143,8 @@ export const projects: Project[] = [
 
     description:
       "An ongoing exploration of hockey, fandom, community, competition, and the culture surrounding one of Canada's most deeply embedded sports.",
+
+    note: "",
 
     status: "wip",
 
