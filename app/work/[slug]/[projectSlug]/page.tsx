@@ -104,7 +104,7 @@ export default async function ProjectDetailPage({
         <ProjectGallery images={project.images ?? []} />
 
         {/* Project details */}
-        <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-[2fr_1fr]">
+        <div className="mt-16 grid grid-cols-1 gap-6 lg:grid-cols-[2fr_1fr]">
           {/* Left column — Project Details */}
           <div>
             <div className="glass rounded-2xl border border-lavender-glow/12 p-6 sm:p-8">
@@ -190,7 +190,7 @@ export default async function ProjectDetailPage({
         {/* Related Projects */}
         <section className="relative mt-16 -mx-6 sm:-mx-10 lg:-mx-12">
           {/* Section heading */}
-          <div className="mb-6 flex items-center gap-3">
+          <div className="mb-6 flex items-center gap-3 pl-3">
             <span className="size-2 rounded-full bg-lavender-glow shadow-[0_0_12px_rgba(167,139,250,0.35)]" />
 
             <h2 className="font-serif text-2xl text-foreground">

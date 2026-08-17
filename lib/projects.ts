@@ -106,7 +106,11 @@ export const projects: Project[] = [
       "Community Engagement",
     ],
 
-    images: [],
+    images: [
+      "/projects/raw-rewind/raw-rewind-01.png",
+      "/projects/raw-rewind/raw-rewind-02.png",
+      "/projects/raw-rewind/raw-rewind-03.png",
+    ],
 
     year: "2026",
 
@@ -903,11 +907,15 @@ export const projects: Project[] = [
       "Small Business Branding",
     ],
 
-    images: [],
+    images: [
+      "/projects/ayer-massage/ayer-01.png",
+      "/projects/ayer-massage/ayer-02.png",
+      "/projects/ayer-massage/ayer-03.png",
+    ],
 
     year: "2026",
 
-    liveUrl: "",
+    liveUrl: "https://ayermassage.com/",
     linkTitle: "Ayer Massage Therapy",
     repoUrl: "",
   },
