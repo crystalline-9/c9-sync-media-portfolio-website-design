@@ -114,8 +114,8 @@ export const projects: Project[] = [
 
     year: "2026",
 
-    liveUrl: "",
-    linkTitle: "",
+    liveUrl: "https://rawandrewind.com/",
+    linkTitle: "R&R Website",
     repoUrl: "",
   },
 
@@ -202,7 +202,7 @@ export const projects: Project[] = [
 
     year: "2026",
 
-    liveUrl: "",
+    liveUrl: "https://www.twitch.tv/crystalline_9",
     linkTitle: "Twitch Channel",
     repoUrl: "",
   },
@@ -245,7 +245,7 @@ export const projects: Project[] = [
 
     year: "2026",
 
-    liveUrl: "",
+    liveUrl: "https://kick.com/crystalline-9",
     linkTitle: "Kick Channel",
     repoUrl: "",
   },
@@ -288,7 +288,7 @@ export const projects: Project[] = [
 
     year: "2026",
 
-    liveUrl: "",
+    liveUrl: "https://www.patreon.com/c/_crystalline_9_",
     linkTitle: "Patreon",
     repoUrl: "",
   },
@@ -376,7 +376,7 @@ export const projects: Project[] = [
 
     year: "2026",
 
-    liveUrl: "",
+    liveUrl: "https://www.linkedin.com/in/alicia-olessia-lomasko-6643aa142/",
     linkTitle: "LinkedIn Profile",
     repoUrl: "",
   },
@@ -426,7 +426,7 @@ export const projects: Project[] = [
 
     year: "2024",
 
-    liveUrl: "",
+    liveUrl: "https://www.spaceappschallenge.org/nasa-space-apps-2024/find-a-team/wave-to-earth/",
     linkTitle: "NASA Space Apps Challenge",
     repoUrl: "",
   },
@@ -558,7 +558,7 @@ export const projects: Project[] = [
 
     year: "2026",
 
-    liveUrl: "",
+    liveUrl: "https://substack.com/@crystalline9",
     linkTitle: "Substack",
     repoUrl: "",
   },
@@ -602,7 +602,7 @@ export const projects: Project[] = [
 
     year: "2026",
 
-    liveUrl: "",
+    liveUrl: "https://www.threads.com/@_crystalline_9_",
     linkTitle: "Threads",
     repoUrl: "",
   },
@@ -690,7 +690,7 @@ export const projects: Project[] = [
 
     year: "2026",
 
-    liveUrl: "",
+    liveUrl: "https://crystalline-9-shop.fourthwall.com/",
     linkTitle: "Fourthwall",
     repoUrl: "",
   },
@@ -734,7 +734,7 @@ export const projects: Project[] = [
 
     year: "2026",
 
-    liveUrl: "",
+    liveUrl: "https://www.etsy.com/ca/shop/LoreStoreBy9",
     linkTitle: "Etsy",
     repoUrl: "",
   },
@@ -778,7 +778,7 @@ export const projects: Project[] = [
 
     year: "2026",
 
-    liveUrl: "",
+    liveUrl: "https://www.instagram.com/_crystalline_9_/",
     linkTitle: "Instagram",
     repoUrl: "",
   },
@@ -822,7 +822,7 @@ export const projects: Project[] = [
 
     year: "2026",
 
-    liveUrl: "",
+    liveUrl: "https://www.tiktok.com/@crystalline_9",
     linkTitle: "TikTok",
     repoUrl: "",
   },
@@ -867,7 +867,7 @@ export const projects: Project[] = [
 
     year: "2026",
 
-    liveUrl: "",
+    liveUrl: "https://www.novahaus.ca/",
     linkTitle: "Nova Haus Developments",
     repoUrl: "",
   },
@@ -959,7 +959,7 @@ export const projects: Project[] = [
 
     year: "2026",
 
-    liveUrl: "",
+    liveUrl: "https://m2nremodelling.ca/",
     linkTitle: "M2N Remodelling",
     repoUrl: "",
   },
