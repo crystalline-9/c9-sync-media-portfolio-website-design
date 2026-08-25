@@ -1001,9 +1001,9 @@ export const projects: Project[] = [
 
     images: [],
 
-    year: "2026",
+    year: "2024",
 
-    liveUrl: "",
+    liveUrl: "https://www.instagram.com/probarrow/",
     linkTitle: "Pro Barrow",
     repoUrl: "",
   },
@@ -1090,9 +1090,9 @@ export const projects: Project[] = [
 
     images: [],
 
-    year: "2026",
+    year: "2024",
 
-    liveUrl: "",
+    liveUrl: "https://youtu.be/ACwDRvUUJPA?si=3PwwNBV2VtmanmOM",
     linkTitle: "Formula 1: Systems at Speed",
     repoUrl: "",
   },
@@ -1137,7 +1137,7 @@ export const projects: Project[] = [
 
     year: "2026",
 
-    liveUrl: "",
+    liveUrl: "https://youtu.be/hxKY4wW-YY4?si=eYHBLKSioXakFoz3",
     linkTitle: "MMA: Discipline & Performance",
     repoUrl: "",
   },
@@ -1182,7 +1182,7 @@ export const projects: Project[] = [
 
     year: "2026",
 
-    liveUrl: "",
+    liveUrl: "https://youtube.com/playlist?list=PL23dt4SmbaXTqsstLcfxVUBfuduAcAaH-&si=QVYgYqhmw3rwyMcz",
     linkTitle: "NHL: Culture of the Game",
     repoUrl: "",
   },
