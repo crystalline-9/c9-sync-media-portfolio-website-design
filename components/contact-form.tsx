@@ -1,36 +1,70 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { Send, Check } from 'lucide-react'
+import { useState } from "react";
+import { Send, Check } from "lucide-react";
 
 export function ContactForm() {
-  const [sent, setSent] = useState(false)
+  const [status, setStatus] = useState<
+    "idle" | "sending" | "success" | "error"
+  >("idle");
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault()
-    setSent(true)
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    setStatus("sending");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.get("name"),
+          email: formData.get("email"),
+          message: formData.get("message"),
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || "Unable to send your message.");
+      }
+
+      form.reset();
+      setStatus("success");
+    } catch (error) {
+      console.error("Contact form submission failed:", error);
+      setStatus("error");
+    }
   }
 
-  if (sent) {
+  if (status === "success") {
     return (
       <div className="glass animate-fade-up flex flex-col items-center gap-4 rounded-2xl border border-cyan-mana/30 p-10 text-center shadow-[0_0_40px_-14px_rgba(57,213,255,0.5)]">
         <span className="flex size-12 items-center justify-center rounded-full border border-cyan-mana/40 bg-cyan-mana/10">
           <Check className="size-6 text-cyan-mana" />
         </span>
-        <h2 className="font-serif text-2xl text-foreground">Message sent into the forest</h2>
+        <h2 className="font-serif text-2xl text-foreground">
+          Message sent into the forest
+        </h2>
         <p className="max-w-sm text-pretty text-sm leading-relaxed text-muted-foreground">
           Thanks for reaching out. I read everything and reply to what I can —
           expect a note back soon.
         </p>
         <button
           type="button"
-          onClick={() => setSent(false)}
+          onClick={() => setStatus("idle")}
           className="mt-2 text-sm font-medium text-cyan-mana hover:underline"
         >
           Send another →
         </button>
       </div>
-    )
+    );
   }
 
   return (
@@ -39,7 +73,10 @@ export function ContactForm() {
       className="glass flex flex-col gap-5 rounded-2xl border border-lavender-glow/15 p-6 sm:p-8"
     >
       <div className="flex flex-col gap-2">
-        <label htmlFor="name" className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+        <label
+          htmlFor="name"
+          className="text-xs font-medium uppercase tracking-wider text-muted-foreground"
+        >
           Name
         </label>
         <input
@@ -52,7 +89,10 @@ export function ContactForm() {
       </div>
 
       <div className="flex flex-col gap-2">
-        <label htmlFor="email" className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+        <label
+          htmlFor="email"
+          className="text-xs font-medium uppercase tracking-wider text-muted-foreground"
+        >
           Email
         </label>
         <input
@@ -66,7 +106,10 @@ export function ContactForm() {
       </div>
 
       <div className="flex flex-col gap-2">
-        <label htmlFor="message" className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+        <label
+          htmlFor="message"
+          className="text-xs font-medium uppercase tracking-wider text-muted-foreground"
+        >
           Message
         </label>
         <textarea
@@ -79,13 +122,20 @@ export function ContactForm() {
         />
       </div>
 
+      {status === "error" && (
+        <p role="alert" className="text-sm text-red-400">
+          Your message couldn't be sent. Please try again in a moment.
+        </p>
+      )}
+
       <button
         type="submit"
-        className="group inline-flex items-center justify-center gap-2 rounded-xl border border-cyan-mana/40 bg-cyan-mana/10 px-6 py-3.5 text-sm font-medium tracking-wide text-foreground transition-all duration-300 hover:bg-cyan-mana/20 hover:shadow-[0_0_30px_-6px_rgba(57,213,255,0.6)]"
+        disabled={status === "sending"}
+        className="group inline-flex items-center justify-center gap-2 rounded-xl border border-cyan-mana/40 bg-cyan-mana/10 px-6 py-3.5 text-sm font-medium tracking-wide text-foreground transition-all duration-300 hover:bg-cyan-mana/20 hover:shadow-[0_0_30px_-6px_rgba(57,213,255,0.6)] disabled:cursor-not-allowed disabled:opacity-60"
       >
-        Send message
+        {status === "sending" ? "Sending…" : "Send message"}
         <Send className="size-4 transition-transform duration-300 group-hover:translate-x-0.5" />
       </button>
     </form>
-  )
+  );
 }

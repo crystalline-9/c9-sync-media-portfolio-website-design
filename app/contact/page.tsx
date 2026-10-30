@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 const details = [
-  { icon: Mail, label: "Email", value: "hello@verdant.studio" },
+  { icon: Mail, label: "Email", value: "portal@crystalline9.com" },
   { icon: MapPin, label: "Based", value: "Wherever the signal is calm" },
   { icon: Compass, label: "Open to", value: "Collaboration & commissions" },
 ];
